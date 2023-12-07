@@ -9,10 +9,8 @@ import jakarta.persistence.Id
 class Category(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
-
-    //유니크 - 셀러 + 코드
-    val sellerId: Long,
     var code: String,
+    var sortSeq: String,
     var name: String
 ) {
 }

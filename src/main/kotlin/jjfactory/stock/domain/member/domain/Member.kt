@@ -1,5 +1,6 @@
 package jjfactory.stock.domain.member.domain
 
+import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
@@ -12,5 +13,7 @@ class Member(
     var username:  String,
     var password: String,
     var disabled: Boolean,
+    @Column(unique = true)
+    var phone: String,
 ) {
 }
