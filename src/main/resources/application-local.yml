@@ -1,0 +1,19 @@
+server:
+  port: 8091
+
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:postgresql://localhost:5433/stock_local
+    username: stock_local
+    password: stock_local
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:8091
+
+application:
+  Environment: local
