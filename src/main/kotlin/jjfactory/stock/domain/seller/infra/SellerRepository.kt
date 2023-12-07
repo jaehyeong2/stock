@@ -1,6 +1,6 @@
-package jjfactory.stock.seller.infra
+package jjfactory.stock.domain.seller.infra
 
-import jjfactory.stock.seller.domain.Seller
+import jjfactory.stock.domain.seller.domain.Seller
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface SellerRepository : JpaRepository<Seller, Long> {

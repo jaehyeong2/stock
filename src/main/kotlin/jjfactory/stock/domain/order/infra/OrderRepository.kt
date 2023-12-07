@@ -1,6 +1,6 @@
-package jjfactory.stock.order.infra
+package jjfactory.stock.domain.order.infra
 
-import jjfactory.stock.order.domain.Order
+import jjfactory.stock.domain.order.domain.Order
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface OrderRepository : JpaRepository<Order, Long>{

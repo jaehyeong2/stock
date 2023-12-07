@@ -1,4 +1,4 @@
-package jjfactory.stock.seller.domain.product
+package jjfactory.stock.domain.member.domain
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -6,13 +6,11 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 
 @Entity
-class Category(
+class Member(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long? = null,
-
-    //유니크 - 셀러 + 코드
-    val sellerId: Long,
-    var code: String,
-    var name: String
+    val id :Long? = null,
+    var username:  String,
+    var password: String,
+    var disabled: Boolean,
 ) {
 }

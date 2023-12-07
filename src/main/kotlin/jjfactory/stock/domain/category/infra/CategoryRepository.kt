@@ -1,6 +1,6 @@
-package jjfactory.stock.seller.infra.product
+package jjfactory.stock.domain.category.infra
 
-import jjfactory.stock.seller.domain.product.Category
+import jjfactory.stock.domain.category.domain.Category
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface CategoryRepository : JpaRepository<Category, Long> {

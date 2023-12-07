@@ -1,4 +1,4 @@
-package jjfactory.stock.order.domain
+package jjfactory.stock.domain.seller.domain
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -6,14 +6,11 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 
 @Entity
-class OrderProduct(
+class Seller(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id :Long? = null,
+    var name:  String,
+    var bizNumber: String
 
-    val orderId: Long,
-    val productId: Long,
-    val qty: Int,
-    val totalPrice: Int
 ) {
-
 }
