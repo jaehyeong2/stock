@@ -1,11 +1,10 @@
 package jjfactory.stock.domain.member.domain
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
+import jakarta.persistence.*
+
 
 //회원은 여러 주소를 가질 수 있다.
+@Table(indexes = [Index(name = "idx_member_id", columnList = "memberId")])
 @Entity
 class Address(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

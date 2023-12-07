@@ -5,4 +5,6 @@ import jjfactory.stock.member.domain.Review
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface AddressRepository : JpaRepository<Address, Long> {
+    fun findAllByMemberId(memberId: Long): List<Address>?
+    fun findByMemberIdAndMainTrue(memberId: Long): Address
 }
