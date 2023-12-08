@@ -11,6 +11,7 @@ class Product(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id :Long? = null,
     val categoryId: Long,
+    val sellerId: Long,
     var exposeName:  String,
     var enrollName: String,
     var code: String

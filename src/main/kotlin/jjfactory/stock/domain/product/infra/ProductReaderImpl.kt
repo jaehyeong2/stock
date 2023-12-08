@@ -1,5 +1,7 @@
-package jjfactory.stock.domain.product.domain
+package jjfactory.stock.domain.product.infra
 
+import jjfactory.stock.domain.product.domain.ProductInfo
+import jjfactory.stock.domain.product.domain.ProductReader
 import org.springframework.stereotype.Component
 
 @Component

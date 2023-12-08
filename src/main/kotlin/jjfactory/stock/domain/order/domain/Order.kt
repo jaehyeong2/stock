@@ -1,10 +1,6 @@
 package jjfactory.stock.domain.order.domain
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.Table
+import jakarta.persistence.*
 
 @Table(name = "orders")
 @Entity
@@ -13,6 +9,8 @@ class Order(
     val id :Long? = null,
     val memberId: Long,
 
+    @Enumerated(EnumType.STRING)
+    val orderState: OrderState,
     val totalPrice: Long
 
 ) {

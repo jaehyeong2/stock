@@ -5,9 +5,11 @@ import jjfactory.stock.domain.common.CommonResponse
 import jjfactory.stock.seller.category.application.CategoryService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
-@RestController("/categories")
+@RestController
+@RequestMapping("/categories")
 class CategoryApi(
     private val categoryService: CategoryService
 ) {

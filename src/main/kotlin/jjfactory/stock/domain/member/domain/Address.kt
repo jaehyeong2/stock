@@ -15,4 +15,8 @@ class Address(
     var alias: String,
     var main: Boolean
 ) {
+
+    fun updateMainAddress(){
+        this.main = true
+    }
 }
