@@ -16,18 +16,18 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class ProductApi(
     private val productService: ProductService,
-    private val productDtoMapper: ProductDtoMapper
+//    private val productDtoMapper: ProductDtoMapper
 ) {
     @GetMapping("/{id}")
     fun getOne(@PathVariable id: Long): CommonResponse<ProductInfo> {
         return CommonResponse(productService.findById(id))
     }
 
-    @PostMapping
-    fun saveOne(@RequestBody request: ProductDto.Create): CommonResponse<Long> {
-        val loginSellerId = 1L
-        val command = productDtoMapper.of(request)
-
-        return CommonResponse(productService.save(1L, command, request.categoryId))
-    }
+//    @PostMapping
+//    fun saveOne(@RequestBody request: ProductDto.Create): CommonResponse<Long> {
+//        val loginSellerId = 1L
+//        val command = productDtoMapper.of(request)
+//
+//        return CommonResponse(productService.save(1L, command, request.categoryId))
+//    }
 }

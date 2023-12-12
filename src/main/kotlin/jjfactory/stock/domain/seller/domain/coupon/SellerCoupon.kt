@@ -19,11 +19,7 @@ class SellerCoupon(
 
 ) {
     fun hasStock(): Boolean {
-        return getStock() != null
-    }
-
-    fun getStock(): Stock?{
-        return stock
+        return stock != null
     }
 
     fun increaseStock(value: Long){

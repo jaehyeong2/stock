@@ -12,6 +12,6 @@ class Order(
     @Enumerated(EnumType.STRING)
     val orderState: OrderState,
     val totalPrice: Long
-
 ) {
+
 }
