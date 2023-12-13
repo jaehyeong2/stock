@@ -8,6 +8,10 @@ import org.springframework.stereotype.Component
 class AddressReaderImpl(
     private val addressRepository: AddressRepository
 ) : AddressReader {
+    override fun findById(id: Long): Address {
+        TODO("Not yet implemented")
+    }
+
     override fun findByMemberId(memberId: Long): List<Address> {
         TODO("Not yet implemented")
     }

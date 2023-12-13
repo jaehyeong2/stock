@@ -7,16 +7,23 @@ import jakarta.persistence.*
 @Entity
 class Address(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id :Long? = null,
+    val id: Long? = null,
     val memberId: Long,
-    var zipCode:  String,
+    var zipCode: String,
     var street: String,
-    var city: Boolean,
+    var city: String,
     var alias: String,
     var main: Boolean
 ) {
 
-    fun updateMainAddress(){
+    fun updateMainAddress() {
         this.main = true
+    }
+
+    fun updateAddress(zipCode: String, street: String, city: String, alias: String) {
+        this.zipCode = zipCode
+        this.street = street
+        this.city = city
+        this.alias = alias
     }
 }

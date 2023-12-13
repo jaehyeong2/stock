@@ -12,8 +12,16 @@ class Member(
     val id :Long? = null,
     var username:  String,
     var password: String,
-    var disabled: Boolean,
+    var disabled: Boolean = false,
     @Column(unique = true)
     var phone: String,
 ) {
+    fun withdraw(){
+        this.disabled = true
+    }
+
+    fun update(username: String, phone: String){
+        this.username = username
+        this.phone = phone
+    }
 }
