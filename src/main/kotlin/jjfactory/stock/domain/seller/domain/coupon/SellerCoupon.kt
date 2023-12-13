@@ -37,7 +37,7 @@ class SellerCoupon(
         stock!!.syncValue(value)
     }
 
-    fun checkStockExist(){
+    private fun checkStockExist(){
         if (!hasStock()) throw StockNotExistException()
     }
 }

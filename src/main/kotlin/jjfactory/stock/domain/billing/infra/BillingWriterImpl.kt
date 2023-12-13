@@ -1,7 +1,7 @@
 package jjfactory.stock.domain.billing.infra
 
-import jjfactory.stock.domain.billing.Billing
-import jjfactory.stock.domain.billing.BillingWriter
+import jjfactory.stock.domain.billing.domain.Billing
+import jjfactory.stock.domain.billing.domain.BillingWriter
 import org.springframework.stereotype.Component
 
 @Component

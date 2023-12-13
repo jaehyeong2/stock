@@ -9,8 +9,8 @@ import java.math.BigDecimal
 
 
 @SpringBootTest
-class CategoryServiceTest(
-    @Autowired val categoryService: CategoryService
+class CategoryFacadeTest(
+    @Autowired val categoryFacade: CategoryFacade
 ) {
 
     @Transactional
@@ -23,7 +23,7 @@ class CategoryServiceTest(
             fee = BigDecimal(0)
         )
 
-        categoryService.create(command)
+        categoryFacade.create(command)
     }
 
 

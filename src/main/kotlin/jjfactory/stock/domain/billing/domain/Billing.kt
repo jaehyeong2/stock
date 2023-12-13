@@ -1,4 +1,4 @@
-package jjfactory.stock.domain.billing
+package jjfactory.stock.domain.billing.domain
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
