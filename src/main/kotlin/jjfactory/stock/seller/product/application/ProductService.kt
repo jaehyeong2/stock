@@ -21,8 +21,8 @@ class ProductService(
 
     @Transactional
     fun save(sellerId: Long, command: ProductCommand.Create, categoryId: Long): Long {
-        val categoryInfo = categoryReader.findById(categoryId)
-        val product = productWriter.write(command.toEntity(categoryInfo.id))
+        val category = categoryReader.findById(categoryId)
+        val product = productWriter.write(command.toEntity(category.id!!))
         return product.id!!
     }
 

@@ -37,6 +37,7 @@ dependencies {
 	kaptTest("org.mapstruct:mapstruct-processor:1.5.5.Final")
 }
 
+
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs += "-Xjsr305=strict"
