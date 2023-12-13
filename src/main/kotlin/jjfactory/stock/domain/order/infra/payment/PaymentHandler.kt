@@ -1,25 +1,25 @@
-package jjfactory.stock.domain.billing.infra
+package jjfactory.stock.domain.order.infra.payment
 
 import jjfactory.stock.client.order.application.OrderedEvent
-import jjfactory.stock.domain.billing.domain.Billing
-import jjfactory.stock.domain.billing.domain.BillingWriter
+import jjfactory.stock.domain.order.domain.payment.Payment
+import jjfactory.stock.domain.order.domain.payment.PaymentWriter
 import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Propagation
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.transaction.event.TransactionalEventListener
 
 @Component
-class BillingHandler(
-    private val billingWriter: BillingWriter,
+class PaymentHandler(
+    private val paymentWriter: PaymentWriter,
 ) {
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     @TransactionalEventListener
     fun orderCreatedListener(event: OrderedEvent){
-        val initBilling = Billing(
+        val initPayment = Payment(
             orderId = event.orderId
         )
 
-        billingWriter.write(initBilling)
+        paymentWriter.write(initPayment)
     }
 }
