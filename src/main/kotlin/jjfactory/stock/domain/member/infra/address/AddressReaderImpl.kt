@@ -1,7 +1,7 @@
-package jjfactory.stock.domain.member.infra
+package jjfactory.stock.domain.member.infra.address
 
-import jjfactory.stock.domain.member.domain.Address
-import jjfactory.stock.domain.member.domain.AddressReader
+import jjfactory.stock.domain.member.domain.address.Address
+import jjfactory.stock.domain.member.domain.address.AddressReader
 import org.springframework.stereotype.Component
 
 @Component

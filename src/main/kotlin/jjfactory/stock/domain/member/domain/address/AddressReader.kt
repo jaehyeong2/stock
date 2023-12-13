@@ -1,4 +1,4 @@
-package jjfactory.stock.domain.member.domain
+package jjfactory.stock.domain.member.domain.address
 
 interface AddressReader {
     fun findByMemberId(memberId: Long): List<Address>

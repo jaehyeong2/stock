@@ -1,7 +1,6 @@
-package jjfactory.stock.domain.member.infra
+package jjfactory.stock.domain.member.infra.address
 
-import jjfactory.stock.domain.member.domain.Address
-import jjfactory.stock.member.domain.Review
+import jjfactory.stock.domain.member.domain.address.Address
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface AddressRepository : JpaRepository<Address, Long> {
