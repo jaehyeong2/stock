@@ -1,13 +1,13 @@
 package jjfactory.stock.client.review.application
 
 import jjfactory.stock.domain.review.domain.ReviewReader
+import jjfactory.stock.domain.review.domain.ReviewService
 import jjfactory.stock.domain.review.domain.ReviewWriter
 import org.springframework.stereotype.Service
 
 @Service
-class ReviewService(
-    private val reviewReader: ReviewReader,
-    private val reviewWriter: ReviewWriter
+class ReviewFacade(
+    private val reviewService: ReviewService
 ) {
 
     fun create(){
