@@ -1,18 +1,25 @@
 package jjfactory.stock.domain.member.domain.card
 
+import jjfactory.stock.domain.member.infra.card.CardRepository
 import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.context.SpringBootTest
 import java.time.LocalDateTime
 
+@SpringBootTest
 class CardServiceTest(
 
 ){
+    @Autowired
+    private lateinit var cardWriter: CardWriter
+    @Autowired
     private lateinit var cardRepository: CardRepository
 
     @BeforeEach
     fun setUp(){
-        cardRepository = CardRepository()
+        cardRepository.deleteAll()
     }
 
 
@@ -26,47 +33,9 @@ class CardServiceTest(
             cvv = "534"
         ).toEntity()
 
-        val idx = cardRepository.save(card)
+        val idx = cardWriter.write(card).id
 
         assertThat(idx).isEqualTo(1)
-    }
-
-    class CardCommand {
-        data class Create(
-            val memberId: Long,
-            val alias: String,
-            val cardNumber: String,
-            val expireDate: LocalDateTime,
-            val cvv: String
-        ){
-            fun toEntity(): Card{
-                return Card(
-                    memberId = memberId,
-                    alias = alias,
-                    cardNumber = cardNumber,
-                    expireDate = expireDate,
-                    cvv = cvv
-                )
-            }
-        }
-    }
-
-    class Card(
-        val memberId: Long,
-        val alias: String,
-        val cardNumber: String,
-        val expireDate: LocalDateTime,
-        val cvv: String
-    )
-
-    class CardRepository{
-        private var idx: Long = 0
-        private val map: MutableMap<Card, Long> = HashMap()
-
-        fun save(card: Card): Long{
-            map[card] = idx++
-            return idx
-        }
     }
 }
 
