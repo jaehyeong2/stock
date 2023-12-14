@@ -18,6 +18,7 @@ java {
 
 repositories {
 	mavenCentral()
+	maven(url = "https://oss.sonatype.org/content/repositories/snapshots")
 }
 
 dependencies {
@@ -26,6 +27,12 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-batch")
 
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
+
+//	implementation("com.linecorp.kotlin-jdsl:spring-data-kotlin-jdsl-starter-jakarta:3.2.0")
+
+	implementation("com.linecorp.kotlin-jdsl:jpql-dsl:3.2.0")
+	implementation("com.linecorp.kotlin-jdsl:spring-data-jpa-support:3.2.0")
+	implementation("com.linecorp.kotlin-jdsl:jpql-render:3.2.0")
 
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
