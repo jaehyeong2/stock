@@ -3,13 +3,13 @@ package jjfactory.stock.client.review.application
 import jjfactory.stock.domain.common.PagingResponse
 import jjfactory.stock.domain.review.domain.ReviewCommand
 import jjfactory.stock.domain.review.domain.ReviewInfo
-import jjfactory.stock.domain.review.domain.ReviewService
+import jjfactory.stock.domain.review.domain.ReviewServiceImpl
 import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 
 @Service
 class ReviewFacade(
-    private val reviewService: ReviewService
+    private val reviewService: ReviewServiceImpl
 ) {
 
     fun create(command: ReviewCommand.Create, loginUserId: Long) {

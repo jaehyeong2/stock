@@ -4,12 +4,10 @@ import jjfactory.stock.member.domain.Review
 
 class ReviewCommand {
     data class Create(
-        val memberId: Long,
-        val productId: Long,
         val rate: Int,
         val content: String
     ) {
-        fun toEntity(): Review {
+        fun toEntity(memberId:Long, productId: Long): Review {
             return Review(
                 memberId = memberId,
                 productId = productId,
@@ -20,8 +18,6 @@ class ReviewCommand {
     }
 
     data class Update(
-        val memberId: Long,
-        val productId: Long,
         val rate: Int,
         val content: String
     )

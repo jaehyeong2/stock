@@ -4,4 +4,5 @@ import jjfactory.stock.member.domain.Review
 
 interface ReviewWriter {
     fun write(review: Review): Review
+    fun deleteById(id: Long)
 }
