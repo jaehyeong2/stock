@@ -1,29 +1,35 @@
 package jjfactory.stock.domain.review.domain
 
-import jjfactory.stock.domain.review.domain.ReviewReader
-import jjfactory.stock.domain.review.domain.ReviewWriter
-import org.springframework.stereotype.Service
+import jjfactory.stock.domain.common.PagingResponse
+import org.springframework.data.domain.Pageable
+import org.springframework.stereotype.Component
+import org.springframework.transaction.annotation.Transactional
 
-@Service
+@Component
 class ReviewService(
     private val reviewReader: ReviewReader,
     private val reviewWriter: ReviewWriter
 ) {
 
-    fun create(){
+    fun create() {
 
     }
 
-    fun delete(){
+    fun delete() {
 
     }
 
-    fun modify(){
+    fun modify() {
 
     }
 
-    // my, product
-    fun getPage(){
+    @Transactional(readOnly = true)
+    fun findByMemberId(memberId: Long, pageable: Pageable): PagingResponse<ReviewInfo?> {
+        return PagingResponse(reviewReader.findByMemberId(memberId, pageable))
+    }
 
+    @Transactional(readOnly = true)
+    fun findByProductId(productId: Long, pageable: Pageable): PagingResponse<ReviewInfo?> {
+        return PagingResponse(reviewReader.findByProductId(productId, pageable))
     }
 }

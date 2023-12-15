@@ -1,6 +1,7 @@
-package jjfactory.stock.domain.gift.domain
+package jjfactory.stock.domain.gift.infra
 
-import jjfactory.stock.domain.gift.infra.GiftRepository
+import jjfactory.stock.domain.gift.domain.Gift
+import jjfactory.stock.domain.gift.domain.GiftReader
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Component

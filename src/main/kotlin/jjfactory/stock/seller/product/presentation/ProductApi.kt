@@ -1,8 +1,12 @@
 package jjfactory.stock.seller.category.presentation
 
+import jjfactory.stock.domain.common.CommonPagingResponse
 import jjfactory.stock.domain.common.CommonResponse
 import jjfactory.stock.domain.product.domain.ProductInfo
+import jjfactory.stock.domain.review.domain.ReviewInfo
 import jjfactory.stock.seller.category.application.ProductFacade
+import org.springframework.data.domain.Pageable
+import org.springframework.data.web.PageableDefault
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
@@ -17,6 +21,11 @@ class ProductApi(
     @GetMapping("/{id}")
     fun getOne(@PathVariable id: Long): CommonResponse<ProductInfo> {
         return CommonResponse(productFacade.findById(id))
+    }
+
+    @GetMapping("/{id}/reviews")
+    fun getReviewsByProductId(@PathVariable id: Long, @PageableDefault pageable: Pageable): CommonPagingResponse<ReviewInfo?> {
+        return CommonPagingResponse(productFacade.getReviewsByProductId(id, pageable))
     }
 
 //    @PostMapping
