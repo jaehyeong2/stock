@@ -8,12 +8,11 @@ import jakarta.persistence.Id
 import jjfactory.stock.domain.common.BaseEntity
 
 @Entity
-class ProductOption(
+class ProductOptionGroup(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long? = null,
-    val groupId: Long,
+    val id :Long? = null,
+    val productId: Long,
     var name: String,
-    var seq: Int,
-    var optionPrice: Int
-) : BaseEntity() {
+    var seq: Int
+):BaseEntity() {
 }
