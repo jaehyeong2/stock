@@ -13,7 +13,8 @@ class ProductCommand {
                 sellerId = sellerId,
                 exposeName = exposeName,
                 enrollName = enrollName,
-                code = code
+                code = code,
+                state = ProductState.PREPARING
             )
         }
     }
