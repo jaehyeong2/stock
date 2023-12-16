@@ -1,10 +1,10 @@
 package jjfactory.stock.domain.seller.domain.shipping_center
 
 import jjfactory.stock.domain.common.PagingResponse
-import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
+import java.lang.RuntimeException
 
 @Component
 class ShippingCenterServiceImpl(
@@ -26,10 +26,12 @@ class ShippingCenterServiceImpl(
     }
 
     @Transactional
-    override fun update(id:Long, command: ShippingCenterCommand.Update): Long {
+    override fun update(id: Long, command: ShippingCenterCommand.Update, sellerId: Long): Long {
         val center = shippingCenterReader.findById(id)
-        center.update(command)
 
+        if (center.sellerId != sellerId) throw RuntimeException()
+
+        center.update(command)
         return center.id!!
     }
 }
