@@ -5,6 +5,8 @@ import jjfactory.stock.domain.common.CommonResponse
 import jjfactory.stock.domain.product.domain.ProductInfo
 import jjfactory.stock.domain.review.domain.ReviewInfo
 import jjfactory.stock.seller.category.application.ProductFacade
+import jjfactory.stock.seller.product.presentation.dto.ProductDto
+import jjfactory.stock.seller.product.presentation.dto.ProductDtoMapper
 import org.springframework.data.domain.Pageable
 import org.springframework.data.web.PageableDefault
 import org.springframework.web.bind.annotation.GetMapping
@@ -16,11 +18,11 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class ProductApi(
     private val productFacade: ProductFacade,
-//    private val productDtoMapper: ProductDtoMapper
+    private val productDtoMapper: ProductDtoMapper
 ) {
     @GetMapping("/{id}")
-    fun getOne(@PathVariable id: Long): CommonResponse<ProductInfo> {
-        return CommonResponse(productFacade.findById(id))
+    fun getOne(@PathVariable id: Long): CommonResponse<ProductDto.Response> {
+        return CommonResponse(productDtoMapper.toDto(productFacade.findById(id)))
     }
 
     @GetMapping("/{id}/reviews")
