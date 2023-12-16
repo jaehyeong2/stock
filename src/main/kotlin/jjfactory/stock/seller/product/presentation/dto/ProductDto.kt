@@ -12,4 +12,13 @@ class ProductDto {
         val exposeName:  String,
         val enrollName: String,
     )
+
+    data class Response(
+        val id: Long,
+        val categoryId: Long,
+        val sellerId: Long,
+        val exposeName: String,
+        val enrollName: String,
+        val code: String
+    )
 }
