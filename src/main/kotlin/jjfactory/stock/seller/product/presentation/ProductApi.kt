@@ -19,7 +19,7 @@ class ProductApi(
 //    private val productDtoMapper: ProductDtoMapper
 ) {
     @GetMapping("/{id}")
-    fun getOne(@PathVariable id: Long): CommonResponse<ProductInfo> {
+    fun getOne(@PathVariable id: Long): CommonResponse<ProductInfo.Main> {
         return CommonResponse(productFacade.findById(id))
     }
 

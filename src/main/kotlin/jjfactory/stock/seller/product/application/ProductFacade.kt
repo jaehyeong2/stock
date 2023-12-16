@@ -13,7 +13,7 @@ class ProductFacade(
     private val productService: ProductService,
     private val reviewService: ReviewService
 ) {
-    fun findById(id: Long): ProductInfo {
+    fun findById(id: Long): ProductInfo.Main {
         return productService.findById(id)
     }
 
