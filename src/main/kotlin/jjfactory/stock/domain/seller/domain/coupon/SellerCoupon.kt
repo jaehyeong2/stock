@@ -1,6 +1,7 @@
 package jjfactory.stock.domain.seller.domain.coupon
 
 import jakarta.persistence.*
+import jjfactory.stock.domain.common.BaseEntity
 import jjfactory.stock.domain.stock.Stock
 import jjfactory.stock.domain.stock.StockNotExistException
 
@@ -17,7 +18,7 @@ class SellerCoupon(
     var name:  String,
     var minPrice: Int
 
-) {
+): BaseEntity() {
     fun hasStock(): Boolean {
         return stock != null
     }

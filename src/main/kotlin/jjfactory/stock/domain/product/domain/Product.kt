@@ -5,6 +5,7 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import jjfactory.stock.domain.common.BaseEntity
 
 @Entity
 class Product(
@@ -15,5 +16,5 @@ class Product(
     var exposeName:  String,
     var enrollName: String,
     var code: String
-) {
+): BaseEntity() {
 }

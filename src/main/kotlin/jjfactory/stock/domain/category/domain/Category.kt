@@ -5,6 +5,7 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import jjfactory.stock.domain.common.BaseEntity
 import java.math.BigDecimal
 
 @Entity
@@ -16,5 +17,5 @@ class Category(
     var sortSeq: String,
     var name: String,
     var fee: BigDecimal
-) {
+): BaseEntity() {
 }

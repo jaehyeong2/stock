@@ -5,6 +5,7 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import jjfactory.stock.domain.common.BaseEntity
 
 @Entity
 class Member(
@@ -15,7 +16,7 @@ class Member(
     var disabled: Boolean = false,
     @Column(unique = true)
     var phone: String,
-) {
+): BaseEntity() {
     fun withdraw(){
         this.disabled = true
     }

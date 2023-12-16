@@ -4,6 +4,7 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import jjfactory.stock.domain.common.BaseEntity
 
 @Entity
 class Stock(
@@ -11,7 +12,7 @@ class Stock(
     val id :Long? = null,
     var totalCnt: Long,
     var remainCnt: Long
-) {
+): BaseEntity() {
     fun increase(value: Long){
         valid(value)
 
