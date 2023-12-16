@@ -18,4 +18,13 @@ class ShippingCenter(
     var address: String,
     var addressDetail: String
 ) {
+
+    fun update(command: ShippingCenterCommand.Update){
+        name = command.name
+        usable = command.usable
+        contactNumber = command.contactNumber
+        zipCode = command.zipCode
+        address = command.address
+        addressDetail = command.addressDetail
+    }
 }
