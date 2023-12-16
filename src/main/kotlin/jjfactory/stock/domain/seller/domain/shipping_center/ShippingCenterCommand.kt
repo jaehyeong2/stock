@@ -2,7 +2,6 @@ package jjfactory.stock.domain.seller.domain.shipping_center
 
 class ShippingCenterCommand {
     data class Create(
-        val sellerId: Long,
         val name: String,
         val contactNumber: String,
         val zipCode: String,
@@ -22,7 +21,6 @@ class ShippingCenterCommand {
     }
 
     data class Update(
-        val sellerId: Long,
         val name: String,
         val usable: Boolean,
         val contactNumber: String,
