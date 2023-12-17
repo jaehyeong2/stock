@@ -17,8 +17,4 @@ class GiftReaderImpl(
     override fun findBySenderId(senderId: Long): List<Gift> {
         return giftRepository.findAllBySenderId(senderId)
     }
-
-    override fun findByReceiverId(receiverId: Long): List<Gift> {
-        return giftRepository.findAllByReceiverId(receiverId)
-    }
 }
